@@ -1,0 +1,35 @@
+version: "3.3"
+   
+services:
+  db:
+    container_name: mssql2019
+    image: "mcr.microsoft.com/mssql/server:2017-GA-ubuntu"
+    environment:
+      SA_PASSWORD: 'P@55w0rd'
+      ACCEPT_EULA: "Y"
+    ports:
+      - 1433:1433
+    volumes: 
+      - ./db:/tmp/
+      - mssql-volume:/var/opt/mssql
+
+    #Inicializar la base de datos
+    #command: "/bin/bash ./tmp/entrypoint.sh" 
+
+  web:
+    build: ./app
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./app/src:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DEBUG=True
+      - PORT=8000
+      - PGPASSWORD=P@55w0rd #this is needed to autofill the password field for creating the db
+      - SECRET_KEY=P@55w0rd
+
+volumes:
+  mssql-volume:

@@ -1,0 +1,9 @@
+Django==2.1
+psycopg2-binary>=2.8
+pyodbc==4.0.30
+#Driver para MSSQL
+django-pyodbc-azure
+#Api
+django-rest
+djangorestframework
+django-cors-headers
