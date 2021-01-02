@@ -7,3 +7,6 @@ django-pyodbc-azure
 django-rest
 djangorestframework
 django-cors-headers
+
+#Env files
+python-decouple
