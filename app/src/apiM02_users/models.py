@@ -11,3 +11,12 @@ class Rol(models.Model):
 
     def __str__(self):
         return str(self.idRol) + ") " + self.nombre
+
+
+class Ubicacion(models.Model):
+    ubi_codigo = models.PositiveSmallIntegerField(primary_key=True)
+    nombre = models.TextField()
+    estado = models.BooleanField(default=True)
+
+    def __str__(self):
+        return str(self.ubi_codigo) + ") " + self.nombre

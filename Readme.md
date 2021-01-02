@@ -35,8 +35,11 @@ python manage.py startapp apiM02_users
 ```
 
 ## Crear un super-usuario
-```
+
 Create Super User
+
+```
+$ python manage.py createsuperuser
 ```
 Username: root
 Email: jospehccaceres@gmail.com
