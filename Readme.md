@@ -41,3 +41,32 @@ Create Super User
 Username: root
 Email: jospehccaceres@gmail.com
 Password: 123
+
+
+
+docker-compose run web 
+
+
+coverage run manage.py test apiM02_users -v 2
+
+
+
+## Test
+
+Para ejecutar los test
+```
+python manage.py test
+
+coverage run manage.py test whatever -v 2
+```
+
+Run coverage:
+```
+$ coverage run manage.py test whatever -v 2
+```
+Use verbosity level 2, -v 2, for more detail. You can also test your entire Django Project at once with this command: coverage run manage.py test -v 2.
+
+Build your report to see where testing should begin:
+```
+$ coverage html
+```

@@ -1,3 +1,6 @@
-from django.test import TestCase
+from django.test import SimpleTestCase
 
-# Create your tests here.
+
+class TestUrls(SimpleTestCase):
+    def test_env_file(self):
+        assert 1 == 2

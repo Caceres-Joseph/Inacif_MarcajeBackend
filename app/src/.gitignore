@@ -1,2 +1,7 @@
 *.pyc 
 **/*.pyc
+
+
+# coverage
+htmlcov
+lib-cov

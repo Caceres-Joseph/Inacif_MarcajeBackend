@@ -7,3 +7,6 @@ django-pyodbc-azure
 django-rest
 djangorestframework
 django-cors-headers
+
+#Test
+django-coverage-plugin==1.5.0
