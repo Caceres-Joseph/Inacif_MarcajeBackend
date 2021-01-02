@@ -10,3 +10,7 @@ django-cors-headers
 
 #Env files
 python-decouple
+
+
+#SOAP client
+zeep

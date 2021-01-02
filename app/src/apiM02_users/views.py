@@ -17,17 +17,12 @@ class RolViewSet(viewsets.ModelViewSet):
 
 
 class UbicacionSerializerViewSet(viewsets.ModelViewSet):
-    queryset = Ubicacion.objects.all().order_by('-ubi_codigo')
-    serializer_class = UbicacionSerializer
-
-
-class UbicacionSerializerViewSet(viewsets.ModelViewSet):
-    queryset = Ubicacion.objects.all().order_by('-ubi_codigo')
+    queryset = Ubicacion.objects.all().order_by('ubi_codigo')
     serializer_class = UbicacionSerializer
 
 
 # Consumiendo api del INACIF
 class actualizar_ubicaciones(APIView):
     def get(self, request, format=None):
-        my_result=actualizarUbicaciones.actualizar()
+        my_result = actualizarUbicaciones.actualizar()
         return JsonResponse(data={"my_return_data": my_result})
